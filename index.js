@@ -1,43 +1,43 @@
 const assert = require('assert');
 
 if (!assert.isTrue) {
-	assert.isTrue = (expected, message) => {
-		assert.equal(true, expected. message);
+	assert.isTrue = (actual, message) => {
+		if (!actual) assert.fail(actual, true, message, '==', assert.isTrue);
 	};
 }
 if (!assert.isStrictTrue) {
-	assert.isStrictTrue = (expected, message) => {
-		assert.strictEqual(true, expected. message);
+	assert.isStrictTrue = (actual, message) => {
+		if (actual !== true) assert.fail(actual, true, message, '==', assert.isStrictTrue);
 	};
 }
 if (!assert.isFalse) {
-	assert.isFalse = (expected, message) => {
-		assert.equal(false, expected. message);
+	assert.isFalse = (actual, message) => {
+		if (actual) assert.fail(actual, false, message, '!=', assert.isFalse);
 	};
 }
 if (!assert.isStrictFalse) {
-	assert.isStrictFalse = (expected, message) => {
-		assert.strictEqual(false, expected. message);
+	assert.isStrictFalse = (actual, message) => {
+		if (actual !== false) assert.fail(actual, false, message, '!==', assert.isStrictFalse);
 	};
 }
 if (!assert.isNaN) {
-	assert.isNaN = (expected, message) => {
-		assert.isStrictTrue(isNaN(expected). message);
+	assert.isNaN = (actual, message) => {
+		if (!isNaN(actual)) assert.fail(actual, NaN, message, 'is', assert.isNaN);
 	};
 }
 if (!assert.isStrictNaN) {
-	assert.isStrictNaN = (expected, message) => {
-		assert.isStrictTrue(isNaN(expected) && typeof expected === 'number'. message);
+	assert.isStrictNaN = (actual, message) => {
+		if (!(isNaN(actual) && typeof actual === 'number')) assert.fail(actual, NaN, message, 'must be', assert.isStrictNaN);
 	};
 }
 if (!assert.isNotNaN) {
-	assert.isNotNaN = (expected, message) => {
-		assert.isStrictFalse(isNaN(expected). message);
+	assert.isNotNaN = (actual, message) => {
+		if (isNaN(actual)) assert.fail(actual, 'NaN', message, 'is not', assert.isNotNaN);
 	};
 }
 if (!assert.isNotStrictNaN) {
-	assert.isNotStrictNaN = (expected, message) => {
-		assert.isStrictFalse(isNaN(expected) && typeof expected === 'number'. message);
+	assert.isNotStrictNaN = (actual, message) => {
+		if (isNaN(actual) && typeof actual === 'number') assert.fail(actual, NaN, message, 'must not be', assert.isNotStrictNaN);
 	};
 }
 

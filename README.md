@@ -24,25 +24,25 @@ const assert = require('asserture');
 
 ### 扩展功能
 
-#### 1. `isTure(expected, [message])`
+#### 1. `isTure(actual, [message])`
 ```javascript
 assert.isTure(true); //ok
 ```
 
-#### 2. `isStrictTrue(expected, [message])`
+#### 2. `isStrictTrue(actual, [message])`
 
-#### 3. `isFalse(expected, [message])`
+#### 3. `isFalse(actual, [message])`
 
-#### 4. `isStrictFalse(expected, [message])`
+#### 4. `isStrictFalse(actual, [message])`
 
-#### 5. `isNaN(expected, [message])`
+#### 5. `isNaN(actual, [message])`
 
-#### 6. `isStrictNaN(expected, [message])`
+#### 6. `isStrictNaN(actual, [message])`
 
 ## Change list 更新日志
 
-### v1.0.0
-	初始化项目
+### v1.0.2
+	正式启动项目
 
 More docs and examples, to be continue...
 更多接口文档的案例,未完待补充...  
