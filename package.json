@@ -1,6 +1,6 @@
 {
   "name": "asserture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "extends assert of node",
   "main": "index.js",
   "scripts": {
