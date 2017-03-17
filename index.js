@@ -50,22 +50,22 @@ const isNot = 'is not';
 
 if (!assert.isTrue) {
 	assert.isTrue = (actual, message) => {
-		if (!actual) assert.fail(actual, true, message, '==', assert.isTrue);
+		if (!actual) assert.fail(actual, true, message, is, assert.isTrue);
 	};
 }
 if (!assert.isStrictTrue) {
 	assert.isStrictTrue = (actual, message) => {
-		if (actual !== true) assert.fail(actual, true, message, '==', assert.isStrictTrue);
+		if (actual !== true) assert.fail(actual, true, message, must, assert.isStrictTrue);
 	};
 }
 if (!assert.isFalse) {
 	assert.isFalse = (actual, message) => {
-		if (actual) assert.fail(actual, false, message, '!=', assert.isFalse);
+		if (actual) assert.fail(actual, false, message, isNot, assert.isFalse);
 	};
 }
 if (!assert.isStrictFalse) {
 	assert.isStrictFalse = (actual, message) => {
-		if (actual !== false) assert.fail(actual, false, message, '!==', assert.isStrictFalse);
+		if (actual !== false) assert.fail(actual, false, message, mustNot, assert.isStrictFalse);
 	};
 }
 if (!assert.isNaN) {
@@ -73,14 +73,14 @@ if (!assert.isNaN) {
 		if (!isNaN(actual)) assert.fail(actual, NaN, message, is, assert.isNaN);
 	};
 }
-if (!assert.isStrictNaN) {
-	assert.isStrictNaN = (actual, message) => {
-		if (!(isNaN(actual) && typeof actual === 'number')) assert.fail(actual, NaN, message, must, assert.isStrictNaN);
-	};
-}
 if (!assert.isNotNaN) {
 	assert.isNotNaN = (actual, message) => {
 		if (isNaN(actual)) assert.fail(actual, 'NaN', message, isNot, assert.isNotNaN);
+	};
+}
+if (!assert.isStrictNaN) {
+	assert.isStrictNaN = (actual, message) => {
+		if (!(isNaN(actual) && typeof actual === 'number')) assert.fail(actual, NaN, message, must, assert.isStrictNaN);
 	};
 }
 if (!assert.isNotStrictNaN) {
