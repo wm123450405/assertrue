@@ -4,6 +4,7 @@
 [![Github Releases (by Release)](https://img.shields.io/github/downloads/wm123450405/asserture/total.svg)](https://github.com/wm123450405/asserture)
 [![npm](https://img.shields.io/npm/v/asserture.svg)](https://www.npmjs.com/package/asserture)
 [![npm](https://img.shields.io/npm/dm/asserture.svg)](https://www.npmjs.com/package/asserture)
+[![Travis branch](https://img.shields.io/travis/wm123450405/asserture.svg)](https://travis-ci.org/wm123450405/asserture)
 
 extends assert of node
 扩展node原生的Assert功能
@@ -71,6 +72,11 @@ assert.isTure(true); //ok
 #### 20. `isNotStrictNumber(actual, [message])`
 
 ## Change list 更新日志
+
+### v1.0.3
+
+	增加 Travis CI 支持
+	新增对各种类型的断言
 
 ### v1.0.2
 
