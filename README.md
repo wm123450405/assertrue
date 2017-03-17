@@ -136,7 +136,7 @@ assert.is(new Sub(), 'Super'); //AssertError
 
 ## Change list 更新日志
 
-### v1.0.3
+### 2017-03-17 v1.0.3
 
 	增加 Travis CI 支持
 	新增对各种类型的断言
