@@ -39,6 +39,35 @@ assert.isTure(true); //ok
 
 #### 6. `isStrictNaN(actual, [message])`
 
+#### 7. `isNotNaN(actual, [message])`
+
+#### 8. `isNotStrictNaN(actual, [message])`
+
+
+#### 9. `isStrictString(actual, [message])`
+
+#### 10. `isNotStrictString(actual, [message])`
+
+#### 11. `isStrictArray(actual, [message])`
+
+#### 12. `isNotStrictArray(actual, [message])`
+
+#### 13. `isStrictFunction(actual, [message])`
+
+#### 14. `isNotStrictFunction(actual, [message])`
+
+#### 15. `isStrictRegExp(actual, [message])`
+
+#### 16. `isNotStrictRegExp(actual, [message])`
+
+#### 17. `isStrictBoolean(actual, [message])`
+
+#### 18. `isNotStrictBoolean(actual, [message])`
+
+#### 19. `isStrictNumber(actual, [message])`
+
+#### 20. `isNotStrictNumber(actual, [message])`
+
 ## Change list 更新日志
 
 ### v1.0.2
