@@ -26,13 +26,15 @@ const types = {
 		return 'Symbol';
 	}
 }
+const getFunctionNameReg = /^(function|class)\s+([^({\s]*)\s*[({].+$/ig;
+const getObjectTypeNameReg = /^\[\w+\s(.+)]$/ig;
 const getType = value => {
-	if (typeof(value) === 'undefined') {
+	if (typeof value === 'undefined') {
 		return types.Undefined;
 	} else {
-		let type = value[Symbol.toStringTag] || Object.prototype.toString.call(value).replace(/^\[\w+\s(.+)]$/ig, '$1');
+		let type = value[Symbol.toStringTag] || Object.prototype.toString.call(value).replace(getObjectTypeNameReg, '$1');
 		if (type === 'Object') {
-			return Function.prototype.toString.call(value.constructor).replace(/^(function|class)\s+([^({\s]*)\s*[({].+$/ig, '$2');
+			return Function.prototype.toString.call(value.constructor).replace(getFunctionNameReg, '$2');
 		} else {
 			let typeName = typeof value;
 			if (typeName !== 'object') {
@@ -43,6 +45,28 @@ const getType = value => {
 		}
 	}
 };
+const getName = type => {
+	if (typeof type === 'undefined') {
+		return types.Undefined;
+	} else {
+		if (getType(type) === types.Function) {
+			return Function.prototype.toString.call(type).replace(getFunctionNameReg, '$2');
+		} else {
+			return type.toString();
+		}
+	}
+};
+const isInstanceOfBoolean = element => element instanceof Boolean || element === true || element === false;
+const isInstanceOfString = element => element instanceof String || getType(element) === types.String;
+const isInstanceOfArray = element => element instanceof Array || getType(element) === types.Array || Array.isArray && Array.isArray(element);
+const isInstanceOfObject = element => element instanceof Object && !(element instanceof RegExp || isInstanceOfArray(element) || isInstanceOfFunction(element));
+const isInstanceOfNumber = element => element instanceof Number || getType(element) === types.Number;
+const isInstanceOfFunction = element => element instanceof Function || getType(element) === types.Function;
+const isInstanceOf = type => element => element instanceof type;
+const isInstanceOfByTypeName = type => element => getType(element).toUpperCase() === type.toUpperCase();
+
+const instanceOf = (value, type) => (type === Boolean ? isInstanceOfBoolean : type === String ? isInstanceOfString : type === Array ? isInstanceOfArray : type === Number ? isInstanceOfNumber : type === Function ? isInstanceOfFunction : type === Object ? isInstanceOfObject : getType(type) === types.String ? isInstanceOfByTypeName(type) : isInstanceOf(type))(value);
+
 const must = 'must be';
 const mustNot = 'must not be';
 const is = 'is';
@@ -75,17 +99,17 @@ if (!assert.isNaN) {
 }
 if (!assert.isNotNaN) {
 	assert.isNotNaN = (actual, message) => {
-		if (isNaN(actual)) assert.fail(actual, 'NaN', message, isNot, assert.isNotNaN);
+		if (isNaN(actual)) assert.fail(actual, NaN, message, isNot, assert.isNotNaN);
 	};
 }
 if (!assert.isStrictNaN) {
 	assert.isStrictNaN = (actual, message) => {
-		if (!(isNaN(actual) && typeof actual === 'number')) assert.fail(actual, NaN, message, must, assert.isStrictNaN);
+		if (!(isNaN(actual) && getType(actual) === types.Number)) assert.fail(actual, NaN, message, must, assert.isStrictNaN);
 	};
 }
 if (!assert.isNotStrictNaN) {
 	assert.isNotStrictNaN = (actual, message) => {
-		if (isNaN(actual) && typeof actual === 'number') assert.fail(actual, NaN, message, mustNot, assert.isNotStrictNaN);
+        if (isNaN(actual) && getType(actual) === types.Number) assert.fail(actual, NaN, message, mustNot, assert.isNotStrictNaN);
 	};
 }
 if (!assert.isStrictString) {
@@ -147,6 +171,16 @@ if (!assert.isNotStrictNumber) {
 	assert.isNotStrictNumber = (actual, message) => {
 		if (getType(actual) === types.Number) assert.fail(actual, types.Number, message, mustNot, assert.isNotStrictNumber);
 	};
+}
+if (!assert.is) {
+    assert.is = (actual, expectedType, message) => {
+        if (!instanceOf(actual, expectedType)) assert.fail(actual, getName(expectedType), message, is, assert.is);
+    };
+}
+if (!assert.isNot) {
+    assert.isNot = (actual, expectedType, message) => {
+        if (instanceOf(actual, expectedType)) assert.fail(actual, getName(expectedType), message, isNot, assert.isNot);
+    };
 }
 
 module.exports = assert;

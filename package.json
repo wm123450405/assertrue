@@ -4,7 +4,8 @@
   "description": "extends assert of node",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wm123450405/asserture/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "homepage": "https://github.com/wm123450405/asserture#readme"
 }
