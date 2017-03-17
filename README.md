@@ -73,6 +73,7 @@ assert.isTure(true); //ok
 ## Change list 更新日志
 
 ### v1.0.2
+
 	正式启动项目
 
 More docs and examples, to be continue...
