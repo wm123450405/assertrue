@@ -12,7 +12,8 @@
   },
   "keywords": [
     "assert",
-    "node"
+    "node",
+    "asserture"
   ],
   "author": "wm123450405",
   "license": "MIT",

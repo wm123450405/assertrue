@@ -1,7 +1,9 @@
 # Asserture
 
+[![GitHub release](https://img.shields.io/github/release/wm123450405/asserture.svg)](https://github.com/wm123450405/asserture)
 [![Github Releases (by Release)](https://img.shields.io/github/downloads/wm123450405/asserture/total.svg)](https://github.com/wm123450405/asserture)
 [![npm](https://img.shields.io/npm/v/asserture.svg)](https://www.npmjs.com/package/asserture)
+[![npm](https://img.shields.io/npm/dm/asserture.svg)](https://www.npmjs.com/package/asserture)
 
 extends assert of node
 扩展node原生的Assert功能
