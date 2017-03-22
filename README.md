@@ -1,10 +1,10 @@
-# Asserture
+# Assertrue
 
-[![GitHub release](https://img.shields.io/github/release/wm123450405/asserture.svg)](https://github.com/wm123450405/asserture)
-[![Github Releases (by Release)](https://img.shields.io/github/downloads/wm123450405/asserture/total.svg)](https://github.com/wm123450405/asserture)
-[![npm](https://img.shields.io/npm/v/asserture.svg)](https://www.npmjs.com/package/asserture)
-[![npm](https://img.shields.io/npm/dm/asserture.svg)](https://www.npmjs.com/package/asserture)
-[![Travis branch](https://img.shields.io/travis/wm123450405/asserture.svg)](https://travis-ci.org/wm123450405/asserture)
+[![GitHub release](https://img.shields.io/github/release/wm123450405/assertrue.svg)](https://github.com/wm123450405/assertrue)
+[![Github Releases (by Release)](https://img.shields.io/github/downloads/wm123450405/assertrue/total.svg)](https://github.com/wm123450405/assertrue)
+[![npm](https://img.shields.io/npm/v/assertrue.svg)](https://www.npmjs.com/package/assertrue)
+[![npm](https://img.shields.io/npm/dm/assertrue.svg)](https://www.npmjs.com/package/assertrue)
+[![Travis branch](https://img.shields.io/travis/wm123450405/assertrue.svg)](https://travis-ci.org/wm123450405/assertrue)
 
 extends assert of node
 扩展node原生的Assert功能
@@ -18,33 +18,33 @@ Usage for English is Coming soon...
 #### 1. 引入
 >使用nodejs
 ```
-$ npm install --save assert
+$ npm install --save assertrue
 ```
 ```javascript
-const assert = require('asserture');
+const assert = require('assertrue');
 ```
-> * 说明:asserture中已经包含原生assert的全部功能,不需要再额外引入assert
+> * 说明:assertrue中已经包含原生assert的全部功能,不需要再额外引入assert
 
 ### 扩展功能
 
-#### 1. `isTure(actual, [message])`
+#### 1. `isTrue(actual, [message])`
 ```javascript
-assert.isTure(true); //ok
-assert.isTure(1); //ok
-assert.isTure('a'); //ok
-assert.isTure(false); //AssertError
-assert.isTure(0); //AssertError
-assert.isTure(''); //AssertError
+assert.isTrue(true); //ok
+assert.isTrue(1); //ok
+assert.isTrue('a'); //ok
+assert.isTrue(false); //AssertError
+assert.isTrue(0); //AssertError
+assert.isTrue(''); //AssertError
 ```
 
 #### 2. `isStrictTrue(actual, [message])`
 ```javascript
-assert.isTure(true); //ok
-assert.isTure(1); //AssertError
-assert.isTure('a'); //AssertError
-assert.isTure(false); //AssertError
-assert.isTure(0); //AssertError
-assert.isTure(''); //AssertError
+assert.isStrictTrue(true); //ok
+assert.isStrictTrue(1); //AssertError
+assert.isStrictTrue('a'); //AssertError
+assert.isStrictTrue(false); //AssertError
+assert.isStrictTrue(0); //AssertError
+assert.isStrictTrue(''); //AssertError
 ```
 
 #### 3. `isFalse(actual, [message])`
@@ -63,12 +63,12 @@ assert.isNaN(true); //AssertError
 
 #### 6. `isStrictNaN(actual, [message])`
 ```javascript
-assert.isNaN(NaN); //ok
-assert.isNaN('a'); //AssertError
-assert.isNaN({}); //AssertError
-assert.isNaN(1); //AssertError
-assert.isNaN('1'); //AssertError
-assert.isNaN(true); //AssertError
+assert.isStrictNaN(NaN); //ok
+assert.isStrictNaN('a'); //AssertError
+assert.isStrictNaN({}); //AssertError
+assert.isStrictNaN(1); //AssertError
+assert.isStrictNaN('1'); //AssertError
+assert.isStrictNaN(true); //AssertError
 ```
 
 #### 7. `isNotNaN(actual, [message])`
@@ -135,6 +135,10 @@ assert.is(new Sub(), 'Super'); //AssertError
 #### 22. `isNot(actual, expectedType, [message])`
 
 ## Change list 更新日志
+
+### 2017-03-22 v1.0.4
+
+	重命名为assertrue
 
 ### 2017-03-17 v1.0.3
 

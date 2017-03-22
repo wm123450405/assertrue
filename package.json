@@ -1,6 +1,6 @@
 {
-  "name": "asserture",
-  "version": "1.0.3",
+  "name": "assertrue",
+  "version": "1.0.4",
   "description": "extends assert of node",
   "main": "index.js",
   "scripts": {
@@ -9,20 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wm123450405/asserture.git"
+    "url": "git+https://github.com/wm123450405/assertrue.git"
   },
   "keywords": [
     "assert",
     "node",
-    "asserture"
+    "assertrue",
+    "true",
+    "test",
+    "unit"
   ],
   "author": "wm123450405",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wm123450405/asserture/issues"
+    "url": "https://github.com/wm123450405/assertrue/issues"
   },
   "engines": {
     "node": ">=6.0.0"
   },
-  "homepage": "https://github.com/wm123450405/asserture#readme"
+  "homepage": "https://github.com/wm123450405/assertrue#readme"
 }

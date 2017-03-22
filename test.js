@@ -1,11 +1,11 @@
 const assert = require('./index');
 
-//isTure ok
+//isTrue ok
 assert.isTrue(true);
 assert.isTrue(1);
 assert.isTrue({});
 assert.isTrue('a');
-//isTure error
+//isTrue error
 assert.throws(() => assert.isTrue(false), assert.AssertError);
 assert.throws(() => assert.isTrue(0), assert.AssertError);
 assert.throws(() => assert.isTrue(''), assert.AssertError);
