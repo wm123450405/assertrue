@@ -32,19 +32,19 @@ const assert = require('assertrue');
 assert.isTrue(true); //ok
 assert.isTrue(1); //ok
 assert.isTrue('a'); //ok
-assert.isTrue(false); //AssertError
-assert.isTrue(0); //AssertError
-assert.isTrue(''); //AssertError
+assert.isTrue(false); //AssertionError
+assert.isTrue(0); //AssertionError
+assert.isTrue(''); //AssertionError
 ```
 
 #### 2. `isStrictTrue(actual, [message])`
 ```javascript
 assert.isStrictTrue(true); //ok
-assert.isStrictTrue(1); //AssertError
-assert.isStrictTrue('a'); //AssertError
-assert.isStrictTrue(false); //AssertError
-assert.isStrictTrue(0); //AssertError
-assert.isStrictTrue(''); //AssertError
+assert.isStrictTrue(1); //AssertionError
+assert.isStrictTrue('a'); //AssertionError
+assert.isStrictTrue(false); //AssertionError
+assert.isStrictTrue(0); //AssertionError
+assert.isStrictTrue(''); //AssertionError
 ```
 
 #### 3. `isFalse(actual, [message])`
@@ -56,19 +56,19 @@ assert.isStrictTrue(''); //AssertError
 assert.isNaN(NaN); //ok
 assert.isNaN('a'); //ok
 assert.isNaN({}); //ok
-assert.isNaN(1); //AssertError
-assert.isNaN('1'); //AssertError
-assert.isNaN(true); //AssertError
+assert.isNaN(1); //AssertionError
+assert.isNaN('1'); //AssertionError
+assert.isNaN(true); //AssertionError
 ```
 
 #### 6. `isStrictNaN(actual, [message])`
 ```javascript
 assert.isStrictNaN(NaN); //ok
-assert.isStrictNaN('a'); //AssertError
-assert.isStrictNaN({}); //AssertError
-assert.isStrictNaN(1); //AssertError
-assert.isStrictNaN('1'); //AssertError
-assert.isStrictNaN(true); //AssertError
+assert.isStrictNaN('a'); //AssertionError
+assert.isStrictNaN({}); //AssertionError
+assert.isStrictNaN(1); //AssertionError
+assert.isStrictNaN('1'); //AssertionError
+assert.isStrictNaN(true); //AssertionError
 ```
 
 #### 7. `isNotNaN(actual, [message])`
@@ -128,13 +128,43 @@ class Sub extends Super {}
 assert.is(new Sub(), Sub); //ok
 assert.is(new Sub(), Super); //ok
 assert.is(new Super(), Super); //ok
-assert.is(new Super(), Sub); //AssertError
-assert.is(new Sub(), 'Super'); //AssertError
+assert.is(new Super(), Sub); //AssertionError
+assert.is(new Sub(), 'Super'); //AssertionError
 ```
 
 #### 22. `isNot(actual, expectedType, [message])`
 
+#### 23. `isAssignableFrom(superType, subType, [message])`
+```javascript
+class Super {}
+class Sub extends Super {}
+
+assert.isAssignableFrom(Super, Sub); //ok
+assert.isAssignableFrom(Super, Super); //ok
+assert.isAssignableFrom(Sub, Sub); //ok
+assert.isAssignableFrom(Sub, Super); //AssertionError
+```
+
+#### 24. `isNotAssignableFrom(superType, subType, [message])`
+
+#### 25 `isAssignableTo(subType, superType, [message])`
+```javascript
+class Super {}
+class Sub extends Super {}
+
+assert.isAssignableFrom(Sub, Super); //ok
+assert.isAssignableFrom(Super, Super); //ok
+assert.isAssignableFrom(Sub, Sub); //ok
+assert.isAssignableFrom(Super, Sub); //AssertionError
+```
+
+#### 26 `isNotAssignableTo(subType, superType, [message])`
+
 ## Change list 更新日志
+
+### 2020-05-12 v1.0.5
+
+    增加对class继承关系的断言
 
 ### 2017-03-22 v1.0.4
 

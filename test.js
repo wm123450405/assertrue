@@ -6,23 +6,23 @@ assert.isTrue(1);
 assert.isTrue({});
 assert.isTrue('a');
 //isTrue error
-assert.throws(() => assert.isTrue(false), assert.AssertError);
-assert.throws(() => assert.isTrue(0), assert.AssertError);
-assert.throws(() => assert.isTrue(''), assert.AssertError);
-assert.throws(() => assert.isTrue(undefined), assert.AssertError);
-assert.throws(() => assert.isTrue(NaN), assert.AssertError);
+assert.throws(() => assert.isTrue(false), assert.AssertionError);
+assert.throws(() => assert.isTrue(0), assert.AssertionError);
+assert.throws(() => assert.isTrue(''), assert.AssertionError);
+assert.throws(() => assert.isTrue(undefined), assert.AssertionError);
+assert.throws(() => assert.isTrue(NaN), assert.AssertionError);
 
 //isStrictTrue ok
 assert.isStrictTrue(true);
 //isStrictTrue error
-assert.throws(() => assert.isStrictTrue(1), assert.AssertError);
-assert.throws(() => assert.isStrictTrue({}), assert.AssertError);
-assert.throws(() => assert.isStrictTrue('a'), assert.AssertError);
-assert.throws(() => assert.isStrictTrue(false), assert.AssertError);
-assert.throws(() => assert.isStrictTrue(0), assert.AssertError);
-assert.throws(() => assert.isStrictTrue(''), assert.AssertError);
-assert.throws(() => assert.isStrictTrue(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictTrue(NaN), assert.AssertError);
+assert.throws(() => assert.isStrictTrue(1), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue({}), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue(false), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue(0), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue(''), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictTrue(NaN), assert.AssertionError);
 
 //isFalse ok
 assert.isFalse(false);
@@ -31,22 +31,22 @@ assert.isFalse('');
 assert.isFalse(undefined);
 assert.isFalse(NaN);
 //isFalse error
-assert.throws(() => assert.isFalse(true), assert.AssertError);
-assert.throws(() => assert.isFalse(1), assert.AssertError);
-assert.throws(() => assert.isFalse({}), assert.AssertError);
-assert.throws(() => assert.isFalse('a'), assert.AssertError);
+assert.throws(() => assert.isFalse(true), assert.AssertionError);
+assert.throws(() => assert.isFalse(1), assert.AssertionError);
+assert.throws(() => assert.isFalse({}), assert.AssertionError);
+assert.throws(() => assert.isFalse('a'), assert.AssertionError);
 
 //isStrictFalse ok
 assert.isStrictFalse(false);
 //isStrictFalse error
-assert.throws(() => assert.isStrictFalse(1), assert.AssertError);
-assert.throws(() => assert.isStrictFalse({}), assert.AssertError);
-assert.throws(() => assert.isStrictFalse('a'), assert.AssertError);
-assert.throws(() => assert.isStrictFalse(true), assert.AssertError);
-assert.throws(() => assert.isStrictFalse(0), assert.AssertError);
-assert.throws(() => assert.isStrictFalse(''), assert.AssertError);
-assert.throws(() => assert.isStrictFalse(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictFalse(NaN), assert.AssertError);
+assert.throws(() => assert.isStrictFalse(1), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse({}), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse(true), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse(0), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse(''), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictFalse(NaN), assert.AssertionError);
 
 //isNaN ok
 assert.isNaN(NaN);
@@ -54,12 +54,12 @@ assert.isNaN('a');
 assert.isNaN({});
 assert.isNaN(undefined);
 //isNaN error
-assert.throws(() => assert.isNaN(0), assert.AssertError);
-assert.throws(() => assert.isNaN(1), assert.AssertError);
-assert.throws(() => assert.isNaN(1/0), assert.AssertError);
-assert.throws(() => assert.isNaN(-1/0), assert.AssertError);
-assert.throws(() => assert.isNaN('1'), assert.AssertError);
-assert.throws(() => assert.isNaN(''), assert.AssertError);
+assert.throws(() => assert.isNaN(0), assert.AssertionError);
+assert.throws(() => assert.isNaN(1), assert.AssertionError);
+assert.throws(() => assert.isNaN(1/0), assert.AssertionError);
+assert.throws(() => assert.isNaN(-1/0), assert.AssertionError);
+assert.throws(() => assert.isNaN('1'), assert.AssertionError);
+assert.throws(() => assert.isNaN(''), assert.AssertionError);
 
 //isNotNaN ok
 assert.isNotNaN(0);
@@ -69,23 +69,23 @@ assert.isNotNaN(-1/0);
 assert.isNotNaN('1');
 assert.isNotNaN('');
 //isNotNaN error
-assert.throws(() => assert.isNotNaN(NaN), assert.AssertError);
-assert.throws(() => assert.isNotNaN('a'), assert.AssertError);
-assert.throws(() => assert.isNotNaN({}), assert.AssertError);
-assert.throws(() => assert.isNotNaN(undefined), assert.AssertError);
+assert.throws(() => assert.isNotNaN(NaN), assert.AssertionError);
+assert.throws(() => assert.isNotNaN('a'), assert.AssertionError);
+assert.throws(() => assert.isNotNaN({}), assert.AssertionError);
+assert.throws(() => assert.isNotNaN(undefined), assert.AssertionError);
 
 //isStrictNaN ok
 assert.isStrictNaN(NaN);
 //isStrictNaN error
-assert.throws(() => assert.isStrictNaN('a'), assert.AssertError);
-assert.throws(() => assert.isStrictNaN({}), assert.AssertError);
-assert.throws(() => assert.isStrictNaN(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictNaN(0), assert.AssertError);
-assert.throws(() => assert.isStrictNaN(1), assert.AssertError);
-assert.throws(() => assert.isStrictNaN(1/0), assert.AssertError);
-assert.throws(() => assert.isStrictNaN(-1/0), assert.AssertError);
-assert.throws(() => assert.isStrictNaN('1'), assert.AssertError);
-assert.throws(() => assert.isStrictNaN(''), assert.AssertError);
+assert.throws(() => assert.isStrictNaN('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN({}), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN(0), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN(1), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN(1/0), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN(-1/0), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN('1'), assert.AssertionError);
+assert.throws(() => assert.isStrictNaN(''), assert.AssertionError);
 
 //isNotStrictNaN ok
 assert.isNotStrictNaN('a');
@@ -98,20 +98,20 @@ assert.isNotStrictNaN(-1/0);
 assert.isNotStrictNaN('1');
 assert.isNotStrictNaN('');
 //isNotStrictNaN error
-assert.throws(() => assert.isNotStrictNaN(NaN), assert.AssertError);
+assert.throws(() => assert.isNotStrictNaN(NaN), assert.AssertionError);
 
 //isStrictString ok
 assert.isStrictString('');
 assert.isStrictString('a');
 assert.isStrictString(new String('abc'));
 //isStrictString error
-assert.throws(() => assert.isStrictString(1), assert.AssertError);
-assert.throws(() => assert.isStrictString([]), assert.AssertError);
-assert.throws(() => assert.isStrictString({}), assert.AssertError);
-assert.throws(() => assert.isStrictString(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictString(()=>{}), assert.AssertError);
-assert.throws(() => assert.isStrictString(true), assert.AssertError);
-assert.throws(() => assert.isStrictString(/\w+/ig), assert.AssertError);
+assert.throws(() => assert.isStrictString(1), assert.AssertionError);
+assert.throws(() => assert.isStrictString([]), assert.AssertionError);
+assert.throws(() => assert.isStrictString({}), assert.AssertionError);
+assert.throws(() => assert.isStrictString(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictString(()=>{}), assert.AssertionError);
+assert.throws(() => assert.isStrictString(true), assert.AssertionError);
+assert.throws(() => assert.isStrictString(/\w+/ig), assert.AssertionError);
 
 //isStrictNumber ok
 assert.isStrictNumber(0);
@@ -120,65 +120,65 @@ assert.isStrictNumber(NaN);
 assert.isStrictNumber(1/0);
 assert.isStrictNumber(-1/0);
 //isStrictNumber error
-assert.throws(() => assert.isStrictNumber('1'), assert.AssertError);
-assert.throws(() => assert.isStrictNumber('a'), assert.AssertError);
-assert.throws(() => assert.isStrictNumber([]), assert.AssertError);
-assert.throws(() => assert.isStrictNumber({}), assert.AssertError);
-assert.throws(() => assert.isStrictNumber(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictNumber(()=>{}), assert.AssertError);
-assert.throws(() => assert.isStrictNumber(true), assert.AssertError);
-assert.throws(() => assert.isStrictNumber(/\w+/ig), assert.AssertError);
+assert.throws(() => assert.isStrictNumber('1'), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber([]), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber({}), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber(()=>{}), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber(true), assert.AssertionError);
+assert.throws(() => assert.isStrictNumber(/\w+/ig), assert.AssertionError);
 
 //isStrictBoolean ok
 assert.isStrictBoolean(true);
 assert.isStrictBoolean(false);
 //isStrictBoolean error
-assert.throws(() => assert.isStrictBoolean('true'), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean('a'), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean([]), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean({}), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean(()=>{}), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean(1), assert.AssertError);
-assert.throws(() => assert.isStrictBoolean(/\w+/ig), assert.AssertError);
+assert.throws(() => assert.isStrictBoolean('true'), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean([]), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean({}), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean(()=>{}), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean(1), assert.AssertionError);
+assert.throws(() => assert.isStrictBoolean(/\w+/ig), assert.AssertionError);
 
 //isStrictArray ok
 assert.isStrictArray([]);
 assert.isStrictArray([1,2]);
 assert.isStrictArray(['a','b']);
 //isStrictArray error
-assert.throws(() => assert.isStrictArray('a'), assert.AssertError);
-assert.throws(() => assert.isStrictArray(true), assert.AssertError);
-assert.throws(() => assert.isStrictArray({}), assert.AssertError);
-assert.throws(() => assert.isStrictArray(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictArray(()=>{}), assert.AssertError);
-assert.throws(() => assert.isStrictArray(1), assert.AssertError);
-assert.throws(() => assert.isStrictArray(/\w+/ig), assert.AssertError);
+assert.throws(() => assert.isStrictArray('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictArray(true), assert.AssertionError);
+assert.throws(() => assert.isStrictArray({}), assert.AssertionError);
+assert.throws(() => assert.isStrictArray(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictArray(()=>{}), assert.AssertionError);
+assert.throws(() => assert.isStrictArray(1), assert.AssertionError);
+assert.throws(() => assert.isStrictArray(/\w+/ig), assert.AssertionError);
 
 //isStrictFunction ok
 assert.isStrictFunction(()=>{});
 assert.isStrictFunction(function(){});
 assert.isStrictFunction(class C{});
 //isStrictFunction error
-assert.throws(() => assert.isStrictFunction('a'), assert.AssertError);
-assert.throws(() => assert.isStrictFunction(true), assert.AssertError);
-assert.throws(() => assert.isStrictFunction({}), assert.AssertError);
-assert.throws(() => assert.isStrictFunction(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictFunction([]), assert.AssertError);
-assert.throws(() => assert.isStrictFunction(1), assert.AssertError);
-assert.throws(() => assert.isStrictFunction(/\w+/ig), assert.AssertError);
+assert.throws(() => assert.isStrictFunction('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictFunction(true), assert.AssertionError);
+assert.throws(() => assert.isStrictFunction({}), assert.AssertionError);
+assert.throws(() => assert.isStrictFunction(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictFunction([]), assert.AssertionError);
+assert.throws(() => assert.isStrictFunction(1), assert.AssertionError);
+assert.throws(() => assert.isStrictFunction(/\w+/ig), assert.AssertionError);
 
 //isStrictRegExp ok
 assert.isStrictRegExp(/\w+/ig);
 assert.isStrictRegExp(new RegExp('\\w+', 'ig'));
 //isStrictRegExp error
-assert.throws(() => assert.isStrictRegExp('a'), assert.AssertError);
-assert.throws(() => assert.isStrictRegExp(true), assert.AssertError);
-assert.throws(() => assert.isStrictRegExp({}), assert.AssertError);
-assert.throws(() => assert.isStrictRegExp(undefined), assert.AssertError);
-assert.throws(() => assert.isStrictRegExp([]), assert.AssertError);
-assert.throws(() => assert.isStrictRegExp(1), assert.AssertError);
-assert.throws(() => assert.isStrictRegExp(()=>{}), assert.AssertError);
+assert.throws(() => assert.isStrictRegExp('a'), assert.AssertionError);
+assert.throws(() => assert.isStrictRegExp(true), assert.AssertionError);
+assert.throws(() => assert.isStrictRegExp({}), assert.AssertionError);
+assert.throws(() => assert.isStrictRegExp(undefined), assert.AssertionError);
+assert.throws(() => assert.isStrictRegExp([]), assert.AssertionError);
+assert.throws(() => assert.isStrictRegExp(1), assert.AssertionError);
+assert.throws(() => assert.isStrictRegExp(()=>{}), assert.AssertionError);
 
 //is ok
 assert.is(1, Number);
@@ -192,21 +192,37 @@ assert.is([], 'Array');
 assert.is({}, Object);
 assert.is({}, 'Object');
 //is error
-assert.throws(() => assert.is(1, String), assert.AssertError);
-assert.throws(() => assert.is('', Number), assert.AssertError);
-assert.throws(() => assert.is([], Object), assert.AssertError);
+assert.throws(() => assert.is(1, String), assert.AssertionError);
+assert.throws(() => assert.is('', Number), assert.AssertionError);
+assert.throws(() => assert.is([], Object), assert.AssertionError);
 //is other
 class Super {}
 class Sub extends Super {}
 assert.is(new Sub(), Sub);
 assert.is(new Sub(), Super);
 assert.is(new Super(), Super);
-assert.throws(() => assert.is(new Super(), Sub), assert.AssertError);
-assert.throws(() => assert.is(new Sub(), 'Super'), assert.AssertError);
+assert.throws(() => assert.is(new Super(), Sub), assert.AssertionError);
+assert.throws(() => assert.is(new Sub(), 'Super'), assert.AssertionError);
 
 //isNot ok
 assert.isNot(true, Number);
-//other ignore
-//+86-025-52334774
+
+//assignable
+assert.isAssignableFrom(Super, Sub);
+assert.isAssignableFrom(Super, Super);
+assert.isAssignableFrom(Sub, Sub);
+assert.throws(() => assert.isAssignableFrom(Sub, Super), assert.AssertionError);
+assert.throws(() => assert.isNotAssignableFrom(Super, Sub), assert.AssertionError);
+assert.throws(() => assert.isNotAssignableFrom(Super, Super), assert.AssertionError);
+assert.throws(() => assert.isNotAssignableFrom(Sub, Sub), assert.AssertionError);
+assert.isNotAssignableFrom(Sub, Super);
+assert.isAssignableTo(Sub, Super);
+assert.isAssignableTo(Super, Super);
+assert.isAssignableTo(Sub, Sub);
+assert.throws(() => assert.isAssignableTo(Super, Sub), assert.AssertionError);
+assert.throws(() => assert.isNotAssignableTo(Sub, Super), assert.AssertionError);
+assert.throws(() => assert.isNotAssignableTo(Super, Super), assert.AssertionError);
+assert.throws(() => assert.isNotAssignableTo(Sub, Sub), assert.AssertionError);
+assert.isNotAssignableTo(Super, Sub);
 
 console.log('test successful');
